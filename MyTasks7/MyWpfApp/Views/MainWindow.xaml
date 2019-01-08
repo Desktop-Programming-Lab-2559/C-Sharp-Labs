@@ -1,0 +1,51 @@
+﻿<Window x:Class="MyWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWpfApp.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="345" Width="400">
+    
+    <Window.Resources>
+        <local:HeroViewModel x:Key="HeroViewModel" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Width="15" Margin="5" Text="Id" FontSize="13" />
+            <TextBlock Width="100" Margin="5" Text="Name" FontSize="13" />
+            <TextBlock Margin="5" Text="Level" FontSize="13" />
+            <TextBlock Margin="5" Text="Speed" FontSize="13" />
+            <TextBlock Margin="5" Text="Energy" FontSize="13" />
+            <TextBlock Margin="5" Text="Strength" FontSize="13" />
+        </StackPanel>
+        
+        <ListBox x:Name="heroesList" Grid.Row="1" ItemsSource="{Binding Heroes}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="10" Margin="5" Text="{Binding Id}" FontSize="13" />
+                        <TextBlock Width="100" Margin="5" Text="{Binding Name}" FontSize="13" />
+                        <TextBlock Width="30" Margin="5" Text="{Binding Level}" FontSize="13" />
+                        <TextBlock Width="30" Margin="5" Text="{Binding Speed}" FontSize="13" />
+                        <TextBlock Width="50" Margin="5" Text="{Binding Energy}" FontSize="13" />
+                        <TextBlock Width="30" Margin="5" Text="{Binding Strength}" FontSize="13" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Add" Width="50" Margin="10" Command="{Binding AddHeroCommand}" />
+            <Button Content="Edit" Width="50" Margin="10" Command="{Binding EditHeroCommand}" CommandParameter="{Binding ElementName=heroesList, Path=SelectedItem}"/>
+            <Button Content="Delete" Width="50" Margin="10" Command="{Binding RemoveHeroCommand}" CommandParameter="{Binding ElementName=heroesList, Path=SelectedItem}"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -107,13 +107,7 @@ namespace MyWpfApp.ViewModels
 
         public HeroViewModel()
         {
-            //InitializeCommand();
             LoadHeroes();
-        }
-
-        private void InitializeCommand()
-        {
-            //SaveHeroCommand = new MyCommand(UpdateHero);
         }
 
         private void LoadHeroes()
@@ -124,7 +118,12 @@ namespace MyWpfApp.ViewModels
                 new Hero(){ Id = 2, Name = "Batman", Level = 4, Speed = 4, Energy = 20.3, Strength = 5 },
                 new Hero(){ Id = 3, Name = "Superman", Level = 10, Speed = 10, Energy = 70.3, Strength = 10 },
                 new Hero(){ Id = 4, Name = "Supergirl", Level = 9, Speed = 9, Energy = 60.3, Strength = 8 },
-                new Hero(){ Id = 5, Name = "Wonder Woman", Level = 8, Speed = 7, Energy = 30.3, Strength = 7 }
+                new Hero(){ Id = 5, Name = "Lex Luthor", Level = 10, Speed = 1, Energy = 1.3, Strength = 1 },
+                new Hero(){ Id = 6, Name = "Green Arrow", Level = 5, Speed = 5, Energy = 20.3, Strength = 6 },
+                new Hero(){ Id = 7, Name = "Batwoman", Level = 3, Speed = 4, Energy = 30.3, Strength = 5 },
+                new Hero(){ Id = 8, Name = "Darkseid", Level = 10, Speed = 10, Energy = 80.3, Strength = 9 },
+                new Hero(){ Id = 9, Name = "Aquaman", Level = 4, Speed = 7, Energy = 50.3, Strength = 7 },
+                new Hero(){ Id = 10, Name = "Wonder Woman", Level = 6, Speed = 7, Energy = 50.3, Strength = 7 },
             };
         }
 

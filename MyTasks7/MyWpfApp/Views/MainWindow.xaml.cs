@@ -24,7 +24,7 @@ namespace MyWpfApp
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new HeroViewModel();
+            //DataContext = new HeroViewModel(); // dont forget to 
         }
     }
 }

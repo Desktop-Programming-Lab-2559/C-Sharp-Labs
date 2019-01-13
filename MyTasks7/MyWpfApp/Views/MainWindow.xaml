@@ -5,20 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyWpfApp.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="345" Width="400">
+        Title="Heroes Stats Window" Height="345" Width="334">
     
     <Window.Resources>
         <local:HeroViewModel x:Key="HeroViewModel" />
     </Window.Resources>
     
-    <Grid>
+    <Grid DataContext="{StaticResource ResourceKey=HeroViewModel}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
             <RowDefinition />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <DataGrid AutoGenerateColumns="False" x:Name="heroesList" ItemsSource="{Binding Heroes}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Level}" Header="Level" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Speed}" Header="Speed" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Energy}" Header="Energy" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Strength}" Header="Strength" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>-->
+        <!--<StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Width="15" Margin="5" Text="Id" FontSize="13" />
             <TextBlock Width="100" Margin="5" Text="Name" FontSize="13" />
             <TextBlock Margin="5" Text="Level" FontSize="13" />
@@ -40,7 +55,7 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
+        </ListBox>-->
         
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Add" Width="50" Margin="10" Command="{Binding AddHeroCommand}" />

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
 namespace MyWpfApp
@@ -9,6 +11,8 @@ namespace MyWpfApp
         public static int Count { get; private set; } = 0;
 
         private int _id;
+        [Required]
+        [Range(1, 99)]
         public int Id
         {
             get => _id;
@@ -20,6 +24,8 @@ namespace MyWpfApp
         }
 
         private string _name;
+        [Required]
+        [StringLength(15)]
         public string Name
         {
             get => _name;
@@ -31,6 +37,8 @@ namespace MyWpfApp
         }
 
         private int _level;
+        [Required]
+        [Range(1, 99)]
         public int Level
         {
             get => _level;
@@ -42,6 +50,8 @@ namespace MyWpfApp
         }
 
         private int _speed;
+        [Required]
+        [Range(0.5, 100)]
         public int Speed
         {
             get => _speed;
@@ -53,6 +63,8 @@ namespace MyWpfApp
         }
 
         private double _energy;
+        [Required]
+        [Range(0.5, 100)]
         public double Energy
         {
             get => _energy;
@@ -64,6 +76,8 @@ namespace MyWpfApp
         }
 
         private int _strength;
+        [Required]
+        [Range(2, 100)]
         public int Strength
         {
             get => _strength;
@@ -120,7 +134,6 @@ namespace MyWpfApp
                         }
                         break;
                 }
-
                 return error;
             }
         }

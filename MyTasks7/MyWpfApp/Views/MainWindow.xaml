@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyWpfApp.ViewModels"
         mc:Ignorable="d"
-        Title="Heroes Stats Window" Height="345" Width="334">
+        Title="DC Heroes Stats" Height="345" Width="334">
     
     <Window.Resources>
         <local:HeroViewModel x:Key="HeroViewModel" />

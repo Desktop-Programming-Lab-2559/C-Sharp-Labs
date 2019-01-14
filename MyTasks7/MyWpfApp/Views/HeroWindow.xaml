@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyWpfApp.ViewModels"
         mc:Ignorable="d"
-        Title="HeroWindow" Height="365.454" Width="300">
+        Title="HeroWindow" Height="357" Width="300">
     <Window.Resources>
         <local:HeroViewModel x:Key="HeroViewModel" />
         <ControlTemplate x:Key="ErrorTemplate">
